@@ -1,0 +1,268 @@
+{
+  "project_name": "Savariya Overseas - Premium Corporate Website",
+  "app_type": "marketing_site",
+  "theme": "Light Corporate (Deep Navy, Royal Blue, Warm Amber/Gold, Crisp Clean White/Off-White)",
+  "brand_identity": {
+    "company_name": "Savariya Overseas",
+    "tagline": "Connecting Global Markets. Delivering Business Solutions.",
+    "positioning": "Premier Indian international trade facilitator, sourcing partner, logistics coordinator, and IT service exporter bridging emerging markets with global enterprise standards.",
+    "locations": [
+      {
+        "city": "Rajkot",
+        "role": "Trade & Sourcing Hub",
+        "address": "110, Haridwar Complex, Krishnanagar Main Road, Opposite Gokuldham Society, Rajkot – 360004, Gujarat, India"
+      },
+      {
+        "city": "Ahmedabad",
+        "role": "Corporate & Tech Operations",
+        "address": "902–903, Iconic Shyamal, Shyamal Cross Road, Nehrunagar, Ahmedabad, Gujarat, India"
+      }
+    ],
+    "phone": "+91 79904 96099",
+    "email": "savariyaoverseas@gmail.com"
+  },
+  "typography": {
+    "heading_font": "Manrope, 'Plus Jakarta Sans', sans-serif",
+    "body_font": "Inter, system-ui, sans-serif",
+    "mono_font": "'JetBrains Mono', monospace",
+    "rules": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900",
+      "h3": "text-xl sm:text-2xl font-semibold text-slate-900",
+      "h4": "text-lg sm:text-xl font-semibold text-slate-800",
+      "body": "text-base text-slate-600 leading-relaxed",
+      "lead": "text-lg sm:text-xl text-slate-600 font-normal leading-relaxed",
+      "overline": "text-xs font-bold uppercase tracking-[0.2em] text-amber-600"
+    }
+  },
+  "colors": {
+    "primary": {
+      "deep_navy": "#0B192C",
+      "navy_dark": "#07111E",
+      "navy_light": "#1E3E62"
+    },
+    "secondary": {
+      "royal_blue": "#1E56A0",
+      "sky_blue": "#007AFF"
+    },
+    "accent": {
+      "warm_gold": "#D4AF37",
+      "amber": "#D97706",
+      "amber_light": "#FEF3C7"
+    },
+    "neutral": {
+      "canvas_bg": "#FAFAF9",
+      "card_bg": "#FFFFFF",
+      "surface_subtle": "#F1F5F9",
+      "border": "#E2E8F0",
+      "border_dark": "#CBD5E1",
+      "text_main": "#0F172A",
+      "text_muted": "#475569",
+      "text_subtle": "#94A3B8"
+    }
+  },
+  "surface_strategy": {
+    "header": "Crystal Glassmorphism with bg-white/85 backdrop-blur-xl border-b border-slate-200/80 shadow-sm sticky top-0 z-50",
+    "cards": "Solid Crisp White (#FFFFFF) with 1px border border-slate-200/80 rounded-xl hover:border-blue-400 hover:shadow-xl transition-all duration-300",
+    "featured_card": "Deep Navy (#0B192C) with subtle amber/gold accents, high-contrast crisp white typography and refined border-slate-700/60",
+    "footer": "Midnight Navy (#07111E) with contrasting crisp off-white typography, warm gold badges, and clean multi-column layout"
+  },
+  "layout_and_navigation": {
+    "pages": [
+      "Home",
+      "About Us",
+      "Services",
+      "Industries",
+      "Global Trade / How We Work",
+      "Why Choose Us",
+      "Contact Us"
+    ],
+    "header": {
+      "logo": "Savariya Overseas (Text Wordmark + Stylized Monogram badge with Navy & Gold geometric precision)",
+      "links": [
+        {"name": "Home", "target": "home"},
+        {"name": "About", "target": "about"},
+        {"name": "Services", "target": "services"},
+        {"name": "Industries", "target": "industries"},
+        {"name": "How We Work", "target": "how-we-work"},
+        {"name": "Why Us", "target": "why-us"},
+        {"name": "Contact", "target": "contact"}
+      ],
+      "primary_cta": "Request a Quote",
+      "mobile_menu": "Smooth full-featured drawer with contact quick-actions"
+    },
+    "mobile_sticky_bar": {
+      "enabled": true,
+      "items": [
+        {"label": "Call Us", "action": "tel:+917990496099", "icon": "Phone"},
+        {"label": "Email", "action": "mailto:savariyaoverseas@gmail.com", "icon": "Mail"},
+        {"label": "Request Quote", "action": "open-quote-modal", "icon": "Send"}
+      ]
+    }
+  },
+  "image_urls": {
+    "hero_maritime_container": {
+      "url": "https://images.unsplash.com/photo-1605745341112-85968b19335b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxjYXJnbyUyMHNoaXAlMjBwb3J0JTIwY29udGFpbmVyc3xlbnwwfHx8fDE3ODgzNDY0NTZ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Cargo ship loaded with global shipping containers sailing on ocean",
+      "category": "Hero Section & Global Trade Highlights"
+    },
+    "port_logistics_crane": {
+      "url": "https://images.unsplash.com/photo-1670121180530-cfcba4438038?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHxjYXJnbyUyMHNoaXAlMjBwb3J0JTIwY29udGFpbmVyc3xlbnwwfHx8fDE3ODgzNDY0NTZ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Heavy cargo container terminal at international dock",
+      "category": "Shipping & Logistics & Project Cargo"
+    },
+    "aerial_port_containers": {
+      "url": "https://images.unsplash.com/photo-1678182451047-196f22a4143e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxjYXJnbyUyMHNoaXAlMjBwb3J0JTIwY29udGFpbmVyc3xlbnwwfHx8fDE3ODgzNDY0NTZ8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Large container yard with global trade freight storage",
+      "category": "Global Network & Import Export"
+    },
+    "corporate_operations_team": {
+      "url": "https://images.unsplash.com/photo-1608303588026-884930af2559?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxjb3Jwb3JhdGUlMjBidXNpbmVzcyUyMGFyY2hpdGVjdHVyZSUyMHRlYW18ZW58MHx8fHwxNzg4MzQ2NDU2fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Engineers and trade consultants reviewing project specifications and blueprints",
+      "category": "About Us & Engineering Sourcing"
+    },
+    "modern_business_discussion": {
+      "url": "https://images.unsplash.com/photo-1557804506-669a67965ba0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwzfHxjb3Jwb3JhdGUlMjBidXNpbmVzcyUyMGFyY2hpdGVjdHVyZSUyMHRlYW18ZW58MHx8fHwxNzg4MzQ2NDU2fDA&ixlib=rb-4.1.0&q=85",
+      "alt": "Professional B2B strategy and trade consulting meeting in modern office",
+      "category": "International Business Support & IT Service Exports"
+    }
+  },
+  "sections_breakdown": {
+    "1_hero": {
+      "badge": "10+ Years of Global Market Experience",
+      "headline": "Connecting Global Markets. Delivering Business Solutions.",
+      "subheadline": "Savariya Overseas is your premier Indian partner for end-to-end product sourcing, import-export facilitation, specialized logistics, and IT service exports. Delivering precision, reliability, and commercial value across borders.",
+      "ctas": [
+        {"label": "Explore Our Services", "type": "secondary", "data_testid": "hero-explore-services-btn"},
+        {"label": "Request a Quote", "type": "primary", "data_testid": "hero-request-quote-btn"}
+      ],
+      "stats_strip": [
+        {"label": "Global Market Experience", "value": "10+", "suffix": "Years"},
+        {"label": "Strategic Hubs in India", "value": "2", "suffix": "Locations (Rajkot & Ahmedabad)"},
+        {"label": "Integrated Services", "value": "6", "suffix": "Core Capabilities"},
+        {"label": "Execution Reliability", "value": "100%", "suffix": "Dedicated Compliance"}
+      ]
+    },
+    "2_about_intro": {
+      "title": "Your Trusted Partner for Global Trade & Business Services",
+      "story": "Headquartered in Gujarat, India's industrial and maritime gateway, Savariya Overseas bridges international buyers and global enterprises with world-class Indian manufacturing hubs, engineering prowess, and cutting-edge IT talent.",
+      "pillars": [
+        {"title": "Integrity & Compliance", "desc": "Transparent trade documentation, standard incoterms, and strict adherence to global regulatory frameworks."},
+        {"title": "Direct Sourcing Power", "desc": "Deep verified supplier network across Gujarat, Maharashtra, and pan-India industrial clusters."},
+        {"title": "End-to-End Orchestration", "desc": "From factory gate audits and quality assurance to customs clearance, freight forwarding, and destination delivery."}
+      ]
+    },
+    "3_services": {
+      "title": "Comprehensive Trade & Business Solutions",
+      "items": [
+        {
+          "id": "sourcing",
+          "title": "Product Sourcing & Vendor Vetting",
+          "icon": "SearchCheck",
+          "description": "Rigorous identification, negotiation, factory auditing, and quality benchmarking across premier Indian manufacturers.",
+          "tag": "Procurement"
+        },
+        {
+          "id": "import-export",
+          "title": "Import & Export Management",
+          "icon": "Globe2",
+          "description": "Full-lifecycle trade facilitation including HS classification, export documentation, customs clearance, and trade finance compliance.",
+          "tag": "Trade Compliance"
+        },
+        {
+          "id": "it-services",
+          "title": "IT Service Exports & Digital Solutions",
+          "icon": "Laptop",
+          "description": "Connecting global businesses with enterprise-grade Indian software engineering, cloud integration, and offshore IT delivery.",
+          "tag": "Technology"
+        },
+        {
+          "id": "logistics",
+          "title": "Shipping & Freight Forwarding",
+          "icon": "Ship",
+          "description": "Multimodal sea, air, and land freight forwarding with container tracking, port handling at Mundra, Pipavav, JNPT, and worldwide hubs.",
+          "tag": "Supply Chain"
+        },
+        {
+          "id": "project-cargo",
+          "title": "Project Cargo & Heavy Lift Logistics",
+          "icon": "Boxes",
+          "description": "Specialized movement of oversized machinery, industrial plant components, and high-value breakbulk cargo with turnkey route surveys.",
+          "tag": "Specialized Freight"
+        },
+        {
+          "id": "business-support",
+          "title": "International Business Support",
+          "icon": "Briefcase",
+          "description": "Market entry strategy, bilingual trade liaison, contract structuring, quality inspection representation, and dispute mitigation.",
+          "tag": "Advisory"
+        }
+      ]
+    },
+    "4_industries": {
+      "title": "Product Categories & Specialized Industries",
+      "subtitle": "Tailored trade conduits engineered for high-growth global industry sectors.",
+      "items": [
+        {"name": "Engineering & Industrial", "description": "Machined castings, valves, forged parts, electrical panels, and heavy engineering assemblies.", "icon": "Wrench"},
+        {"name": "Agricultural Commodities", "description": "Spices, oilseeds, grains, and specialty agro products with stringent phytosanitary compliance.", "icon": "Wheat"},
+        {"name": "Consumer Products & Textiles", "description": "Home textiles, apparel, brassware, ceramic tiles, packaging materials, and everyday consumer goods.", "icon": "PackageOpen"},
+        {"name": "Automotive & Heavy Equipment", "description": "Precision OEM parts, tractor spares, gears, pumps, fasteners, and heavy vehicle components.", "icon": "Car"},
+        {"name": "Technology & IT Services", "description": "Custom enterprise software, cloud operations, web & mobile applications, and dedicated offshore tech teams.", "icon": "Code2"}
+      ]
+    },
+    "5_how_we_work": {
+      "title": "Structured 5-Step Execution Methodology",
+      "subtitle": "From initial requirement analysis to final port delivery and post-shipment support.",
+      "steps": [
+        {"step": "01", "title": "Understand & Scope", "desc": "Detailed technical, commercial, and regulatory requirement intake."},
+        {"step": "02", "title": "Source & Audit", "desc": "Supplier vetting, sample verification, price negotiation, and quality validation."},
+        {"step": "03", "title": "Coordinate & Plan", "desc": "Contract finalization, production milestone tracking, and export licensing."},
+        {"step": "04", "title": "Execute & Forward", "desc": "Pre-shipment inspection, container stuffing, port handling, and customs clearance."},
+        {"step": "05", "title": "Deliver & Support", "desc": "Port-to-door tracking, destination customs liaison, and long-term partnership review."}
+      ]
+    },
+    "6_why_choose_us": {
+      "title": "Why Global Enterprises Choose Savariya Overseas",
+      "values": [
+        {"title": "10+ Years Domain Expertise", "desc": "Deep operational knowledge of Indian trade lanes, customs tariffs, and global logistics."},
+        {"title": "Strategic Dual Hub Presence", "desc": "Offices in Rajkot (industrial heartland) and Ahmedabad (corporate & financial capital)."},
+        {"title": "100% Transparent Governance", "desc": "No hidden broker fees, open-book logistics pricing, and verified factory direct rates."},
+        {"title": "Rigorous Quality Assurance", "desc": "On-ground physical inspections, container loading monitoring, and lab testing compliance."},
+        {"title": "End-to-End Accountability", "desc": "Single-point coordination eliminating multiple vendor handoffs and communication gaps."},
+        {"title": "Flexible Sourcing Models", "desc": "From spot container orders to dedicated long-term procurement and IT service contracts."}
+      ]
+    },
+    "7_contact_and_inquiry_form": {
+      "title": "Let's Build Your Next Global Business Connection",
+      "subtitle": "Connect with our international trade desk in Rajkot and Ahmedabad. We respond to all formal inquiries within 24 business hours.",
+      "form_fields": [
+        {"name": "fullName", "label": "Full Name", "required": true, "type": "text"},
+        {"name": "companyName", "label": "Company / Enterprise Name", "required": true, "type": "text"},
+        {"name": "businessEmail", "label": "Business Email Address", "required": true, "type": "email"},
+        {"name": "phone", "label": "Phone Number (with Country Code)", "required": true, "type": "tel"},
+        {"name": "country", "label": "Country / Region", "required": true, "type": "text"},
+        {"name": "inquiryType", "label": "Inquiry Type", "required": true, "type": "select", "options": ["Product Sourcing", "Import / Export Trade", "Shipping & Freight Logistics", "Project Cargo Management", "IT Service Exports", "General Business Partnership"]},
+        {"name": "productService", "label": "Product / Service Required", "required": false, "type": "text"},
+        {"name": "projectDetails", "label": "Estimated Volume / Project Scope", "required": false, "type": "text"},
+        {"name": "message", "label": "Detailed Message & Specifications", "required": true, "type": "textarea"}
+      ],
+      "submission_mode": "mailto (opens user email client with fully populated inquiry draft) plus on-page interactive modal confirmation",
+      "target_email": "savariyaoverseas@gmail.com"
+    }
+  },
+  "interactive_enhancers": {
+    "interactive_trade_calculator": "Quick Trade Estimator modal / widget letting international buyers select origin, destination, cargo type, and service requirements to generate an instant formal RFQ draft.",
+    "rfq_modal": "Quick quote modal triggered from header CTA and hero section.",
+    "interactive_tabs": "Filterable service and industry category views with live detail drawer.",
+    "live_compliance_badge": "Interactive verification indicators showcasing AEO compliance readiness, GST verification, and standard Incoterms support."
+  },
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Follow Light Corporate theme: Deep Navy (#0B192C), Royal Blue (#1E56A0), Warm Amber Gold (#D4AF37), and Crisp White/Off-White canvas.",
+    "Ensure header has solid glassmorphic background (bg-white/90 backdrop-blur-md) with border-b so text is never placed over raw images with zero background.",
+    "Use Manrope / Inter sans-serif pairing with tight tracking on headings and generous vertical spacing (py-16 to py-24 for sections).",
+    "Include data-testid on every interactive element (buttons, inputs, links, tabs, cards).",
+    "Implement the Contact Us form to generate a structured mailto link to savariyaoverseas@gmail.com with subject and body pre-filled with inquiry details.",
+    "Provide mobile sticky bottom bar with Quick Call, Direct Email, and Request Quote triggers.",
+    "Do not invent fake logos, certificates, or awards; use clean professional badge designs and clearly labeled industry capabilities."
+  ]
+}
