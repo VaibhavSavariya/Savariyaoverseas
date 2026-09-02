@@ -3,6 +3,8 @@ export const company = {
   tagline: 'Connecting Global Markets. Delivering Business Solutions.',
   phone: '+91 79904 96099',
   phoneHref: 'tel:+917990496099',
+  whatsapp: '917990496099',
+  whatsappHref: 'https://wa.me/917990496099',
   email: 'savariyaoverseas@gmail.com',
   emailHref: 'mailto:savariyaoverseas@gmail.com',
   offices: [

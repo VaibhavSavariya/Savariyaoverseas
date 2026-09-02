@@ -1,0 +1,40 @@
+{
+  "summary": "Frontend-only re-test (iteration 2) of the two new requests: (1) full-bleed Home hero background image and (2) Contact form WhatsApp submission. Measured the hero <img> geometry at 1920x900, 1280x800, 768x1024 and 390x844 - in every case the image rect exactly equals the hero section rect (x=0, full width, full height), so there are NO empty navy gutters/columns; image loads (4834x3215 unsplash asset, complete=true) and headline/sub/CTAs stay readable. 'Operating From - Rajkot & Ahmedabad' card renders at all breakpoints and never overlaps the h1 or the CTA buttons; header (75-76px) never overlaps the hero badge (badge top >= 155px). Hero CTAs navigate correctly. Contact form WhatsApp flow fully verified: happy-path submit opens a real popup whose FIRST requested URL is https://wa.me/917990496099?text=... (WhatsApp then 302s it to api.whatsapp.com/send - expected), decoded text contains full name, company, email, phone, country, inquiry type, product, quantity and message; success panel contact-form-success appears mentioning WhatsApp and contact-form-whatsapp-link href points to the identical wa.me URL. Validation still blocks: empty submit shows all 5 errors and opens 0 popups; a wrong arithmetic answer also shows error-human and opens 0 popups. contact-form-reset-btn clears the form AND regenerates a new arithmetic question (5+2 -> 7+5), confirming the iteration-1 memo-dependency bug is fixed. Regression: all 7 routes render an h1 with ZERO console/page errors and zero horizontal overflow at 1920x900 and 390x844; mobile sticky bar (tel:+917990496099, mailto:savariyaoverseas@gmail.com, quote -> /contact) and footer tel/mailto links intact. Backend testing skipped per request (no backend).",
+  "backend_issues": { "critical": [], "minor": [] },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "Home hero (all breakpoints)",
+        "issues": [
+          "Requirement is technically met (image is full-bleed, no gutters) but PERCEPTUALLY the photo still reads as a narrow bright strip: three stacked overlays (bg-navy-900/70 + bg-gradient-to-r from-navy-900 via-navy-900/85 to-navy-900/30 + a 40px bottom fade) crush the left ~45% and the top/bottom of the image to almost solid navy. If the user's complaint was 'it looks like navy blocks around the image', consider lowering the flat overlay to /45-/55 and starting the horizontal gradient at navy-900/85 instead of navy-900.",
+          "Mobile (390x844) hero is 1128px tall - the 'Operating From' card starts at y=908, i.e. fully below the fold, so the hero needs ~1.3 screens of scrolling before the next section. Consider tightening mobile spacing (mt-14 dl + card gap-14)."
+        ]
+      },
+      {
+        "screen": "Contact - after submit",
+        "issues": ["After a successful submit the page does not scroll the success panel into view; on a long page the user is left mid-page with the panel partially above the viewport. Consider scrollIntoView on the success node."]
+      }
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "OPTIONAL/DESIGN: soften hero overlay opacity so the full-bleed photo is actually perceivable across the whole hero (currently ~70%+gradient makes it look like a strip).",
+    "OPTIONAL: scroll contact-form-success into view after submit.",
+    "LOW (carried over from iteration 1): 3 ESLint react/no-unescaped-entities errors (apostrophes) in Home.jsx:94, About.jsx:47, CTASection.jsx:22; and the 11px office footnote label contrast on /contact."
+  ],
+  "critical_code_review_comments": [
+    "ContactForm.onSubmit calls window.open(...) and then setSent(true) unconditionally - if the browser blocks the popup the user still sees 'we opened WhatsApp'. Mitigated by contact-form-whatsapp-link, but consider checking the window.open return value and adapting the copy when it is null.",
+    "window.open(url, '_blank', 'noopener,noreferrer') - passing features as the 3rd arg makes some browsers open a bare popup window; 'noopener' alone in the features string is fine, but a plain window.open(url, '_blank') plus rel on the fallback anchor is more predictable.",
+    "The arithmetic spam check is client-side only and trivially bypassable - acceptable for a deep-link-to-WhatsApp form with no server, no action needed.",
+    "Hero: two absolutely positioned full-size gradient divs + a grid-lines layer stack on top of the img; all are pointer-events-none by default here, and clicks on hero CTAs were verified actionable (normal click, no force)."
+  ],
+  "updated_files": [],
+  "success_rate": { "backend": "not tested (skipped per request)", "frontend": "100% of requested scenarios passed (3 optional design/polish findings)" },
+  "seed_data_creation": "None - static site. Contact form submitted with TEST_ prefixed data; nothing persisted (WhatsApp deep link only).",
+  "should_call_test_agent_after_fix": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Hero img rect == section rect verified programmatically at 1920x900/1280x800/768x1024/390x844 (hero heights 924/832/948/1128px). WhatsApp popup MUST be captured via context 'request' listener filtering 'wa.me' (or expect_page + reading the first request) because WhatsApp immediately redirects wa.me -> api.whatsapp.com/send/?phone=...&text=... with '+'-encoded spaces; asserting on popup.url after redirect will look like a failure. Use urllib.parse.unquote_plus if decoding the redirected URL. Reset button now regenerates the captcha (seed dep added to useMemo). All 7 routes clean of console errors at both desktop and mobile.",
+  "rca_of_the_issue": "No defects found this iteration. The only apparent 'failure' during testing was my own assertion against popup.url after WhatsApp's 302 redirect (wa.me -> api.whatsapp.com/send, spaces encoded as '+'); re-verified against the initial outbound request and the contact-form-whatsapp-link href, both of which are exactly https://wa.me/917990496099?text=<percent-encoded inquiry>."
+}

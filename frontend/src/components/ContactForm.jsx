@@ -37,6 +37,7 @@ export default function ContactForm() {
   const [form, setForm] = useState(initial);
   const [errors, setErrors] = useState({});
   const [sent, setSent] = useState(false);
+  const [waUrl, setWaUrl] = useState('');
 
   const [seed, setSeed] = useState(0);
   const spamAnswer = useMemo(() => {
@@ -67,50 +68,73 @@ export default function ContactForm() {
     setErrors(e);
     if (Object.keys(e).length) return;
 
-    const body = [
-      `Full Name: ${form.fullName}`,
-      `Company Name: ${form.companyName || '-'}`,
-      `Business Email: ${form.email}`,
-      `Phone Number: ${form.phone || '-'}`,
-      `Country: ${form.country || '-'}`,
-      `Inquiry Type: ${form.inquiryType}`,
-      `Product / Service Required: ${form.productService || '-'}`,
-      `Quantity / Project Details: ${form.quantity || '-'}`,
+    const lines = [
+      '*New Business Inquiry — Savariya Overseas*',
       '',
-      'Message:',
+      `*Full Name:* ${form.fullName}`,
+      `*Company Name:* ${form.companyName || '-'}`,
+      `*Business Email:* ${form.email}`,
+      `*Phone Number:* ${form.phone || '-'}`,
+      `*Country:* ${form.country || '-'}`,
+      `*Inquiry Type:* ${form.inquiryType}`,
+      `*Product / Service Required:* ${form.productService || '-'}`,
+      `*Quantity / Project Details:* ${form.quantity || '-'}`,
+      '',
+      `*Message:*`,
       form.message,
-      '',
-      '— Sent from savariyaoverseas.com inquiry form',
     ].join('\n');
 
-    const url = `mailto:${company.email}?subject=${encodeURIComponent(
-      `Business Inquiry — ${form.inquiryType} — ${form.companyName || form.fullName}`
-    )}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = url;
+    const url = `https://wa.me/${company.whatsapp}?text=${encodeURIComponent(lines)}`;
+    setWaUrl(url);
+    const win = window.open(url, '_blank');
+    if (win) win.opener = null;
     setSent(true);
+    requestAnimationFrame(() =>
+      document
+        .getElementById('inquiry-form-top')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    );
   };
 
   if (sent) {
     return (
       <div
+        id="inquiry-form-top"
         data-testid="contact-form-success"
-        className="rounded-2xl border border-slate-200 bg-white p-9 shadow-card"
+        className="scroll-mt-28 rounded-2xl border border-slate-200 bg-white p-9 shadow-card"
       >
         <span className="grid h-12 w-12 place-items-center rounded-xl bg-navy text-gold-400">
           <Icon name="CheckCircle2" className="h-6 w-6" />
         </span>
-        <h3 className="mt-6 h3">Thank you — your inquiry is ready to send</h3>
+        <h3 className="mt-6 h3">Thank you — your inquiry is ready on WhatsApp</h3>
         <p className="mt-4 body">
-          We have opened your email application with your inquiry details pre-filled. Please review
-          and send the message so it reaches our trade desk. If your email application did not open,
-          you can write to us directly at{' '}
-          <a href={company.emailHref} className="font-semibold text-royal underline">
-            {company.email}
-          </a>{' '}
-          or call{' '}
+          We have opened WhatsApp in a new tab with your inquiry details pre-filled for{' '}
+          <span className="font-semibold text-navy">{company.phone}</span>. Please press send so it
+          reaches our trade desk.
+        </p>
+        <div className="mt-7 flex flex-wrap gap-3">
+          <a
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="contact-form-whatsapp-link"
+            className="btn-primary"
+          >
+            Open WhatsApp again
+            <Icon name="ArrowUpRight" className="h-4 w-4" />
+          </a>
+          <a href={company.emailHref} data-testid="contact-form-email-fallback" className="btn-outline">
+            Email us instead
+          </a>
+        </div>
+        <p className="mt-5 text-[13px] text-slate-500">
+          Prefer to talk? Call{' '}
           <a href={company.phoneHref} className="font-semibold text-royal underline">
             {company.phone}
+          </a>{' '}
+          or write to{' '}
+          <a href={company.emailHref} className="font-semibold text-royal underline">
+            {company.email}
           </a>
           .
         </p>
@@ -271,9 +295,8 @@ export default function ContactForm() {
         Submit Inquiry
         <Icon name="Send" className="h-4 w-4" />
       </button>
-      <p className="mt-4 text-[12.5px] leading-relaxed text-slate-400">
-        Submitting opens your email application with the inquiry details pre-filled, addressed to{' '}
-        {company.email}.
+      <p className="mt-4 text-[12.5px] leading-relaxed text-slate-500">
+        Submitting opens WhatsApp with your inquiry details pre-filled for {company.phone}.
       </p>
     </form>
   );

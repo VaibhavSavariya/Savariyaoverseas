@@ -21,8 +21,17 @@ export default function Home() {
 
       {/* Hero */}
       <section className="relative isolate overflow-hidden bg-navy pb-16 pt-28 sm:pb-24 sm:pt-36 lg:pb-0 lg:pt-0">
+        <img
+          src={images.heroPort}
+          alt="Container vessel carrying international cargo across the ocean"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-navy-900/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/70 to-navy-900/20" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-navy-900 to-transparent" />
+        <div className="absolute inset-0 grid-lines opacity-20" />
         <div className="container-x relative grid items-center gap-14 lg:min-h-[92vh] lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pt-24">
-          <div className="absolute inset-0 -z-10 grid-lines opacity-30" />
           <div className="relative">
             <Reveal>
               <span className="inline-flex items-center gap-2.5 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 font-display text-[11px] font-bold uppercase tracking-[0.16em] text-gold-300">
@@ -73,26 +82,18 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.2} className="relative lg:h-[92vh]">
-            <div className="relative h-[320px] overflow-hidden rounded-2xl sm:h-[440px] lg:h-full lg:rounded-none">
-              <img
-                src={images.heroPort}
-                alt="Container vessel carrying international cargo across the ocean"
-                className="h-full w-full object-cover"
-                loading="eager"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/85 via-navy/15 to-transparent lg:bg-gradient-to-r lg:from-navy lg:via-navy/25 lg:to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 rounded-xl border border-white/12 bg-navy-900/75 p-5 backdrop-blur-md lg:bottom-14 lg:left-auto lg:right-8 lg:max-w-[300px]">
-                <p className="font-display text-[11px] font-bold uppercase tracking-overline text-gold-400">
-                  Operating From
-                </p>
-                <p className="mt-3 font-display text-[15px] font-bold text-white">
-                  Rajkot &amp; Ahmedabad, Gujarat
-                </p>
-                <p className="mt-2 text-[13px] leading-relaxed text-white/55">
-                  Positioned within one of India's important industrial and manufacturing regions.
-                </p>
-              </div>
+          <Reveal delay={0.2} className="relative lg:flex lg:h-[92vh] lg:items-end lg:justify-end lg:pb-20">
+            <div className="rounded-2xl border border-white/12 bg-navy-900/70 p-6 backdrop-blur-md lg:max-w-[320px]">
+              <p className="font-display text-[11px] font-bold uppercase tracking-overline text-gold-400">
+                Operating From
+              </p>
+              <p className="mt-3 font-display text-[16px] font-bold text-white">
+                Rajkot &amp; Ahmedabad, Gujarat
+              </p>
+              <p className="mt-2.5 text-[13.5px] leading-relaxed text-white/60">
+                Positioned within one of India&apos;s important industrial and manufacturing regions,
+                with a global business outlook.
+              </p>
             </div>
           </Reveal>
         </div>
